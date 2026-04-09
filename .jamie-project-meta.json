@@ -1,0 +1,22 @@
+{
+  "name": "repo-pulse",
+  "summary": "Repo Pulse is a local-first Git analytics tool that scans any repository with git log, computes commit cadence and file churn metrics, and emits a self-contained static HTML report plus JSON output that can be hosted directly on GitHub Pages.",
+  "category": "data-viz",
+  "tech_stack": [
+    "Node.js",
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "GitHub Pages"
+  ],
+  "test_commands": [
+    "npm test"
+  ],
+  "run_commands": [
+    "npm run report",
+    "node ./src/cli.js /path/to/repo --out ./docs"
+  ],
+  "github_repo": "jamiegonzalez929/repo-pulse",
+  "github_url": "https://github.com/jamiegonzalez929/repo-pulse",
+  "pages_url": "https://jamiegonzalez929.github.io/repo-pulse/"
+}
