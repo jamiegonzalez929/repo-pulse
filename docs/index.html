@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Repo Pulse: /Users/jamie/projects/daily-codex-projects/runs/20260409-101518</title>
+  <style>
+    :root {
+      --bg: #f5efe2;
+      --panel: rgba(255, 252, 245, 0.82);
+      --ink: #182126;
+      --muted: #5e665f;
+      --accent: #176087;
+      --accent-soft: #73a9c2;
+      --warm: #d48642;
+      --line: rgba(24, 33, 38, 0.12);
+      --shadow: 0 18px 40px rgba(61, 46, 25, 0.14);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(212, 134, 66, 0.24), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(23, 96, 135, 0.18), transparent 28%),
+        linear-gradient(135deg, #efe4cf 0%, #f5efe2 55%, #f7f4ed 100%);
+    }
+    .wrap {
+      width: min(1120px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 32px 0 56px;
+    }
+    .hero {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.54));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+    .eyebrow {
+      margin: 0 0 12px;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    h1, h2 {
+      font-family: "Iowan Old Style", "Palatino Linotype", serif;
+      margin: 0;
+      line-height: 1.04;
+    }
+    h1 { font-size: clamp(2rem, 5vw, 4.3rem); max-width: 11ch; }
+    h2 { font-size: 1.35rem; margin-bottom: 18px; }
+    .lede {
+      max-width: 68ch;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.6;
+    }
+    .meta {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      padding: 22px;
+    }
+    .stat {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 10px 0 0;
+    }
+    .subtle {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .section {
+      margin-top: 18px;
+    }
+    .bars {
+      display: grid;
+      gap: 12px;
+    }
+    .bar-row {
+      display: grid;
+      grid-template-columns: 66px 1fr 56px;
+      gap: 12px;
+      align-items: center;
+      font-size: 0.94rem;
+    }
+    .bar {
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(24, 33, 38, 0.08);
+      overflow: hidden;
+    }
+    .bar > span {
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+    }
+    .heatmap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(12px, 1fr));
+      gap: 6px;
+      align-items: end;
+      min-height: 140px;
+    }
+    .heatmap > span {
+      background: linear-gradient(180deg, var(--warm), var(--accent));
+      border-radius: 999px 999px 6px 6px;
+      opacity: 0.88;
+      min-height: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th { color: var(--muted); font-weight: 600; }
+    code {
+      font-family: "SF Mono", "Monaco", monospace;
+      font-size: 0.92em;
+    }
+    .commit-list {
+      display: grid;
+      gap: 12px;
+    }
+    .commit {
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+    .commit:last-child { border-bottom: 0; padding-bottom: 0; }
+    .commit strong { display: block; margin-bottom: 4px; }
+    @media (max-width: 720px) {
+      .wrap { width: min(100vw - 20px, 1120px); padding-top: 20px; }
+      .hero, .card { border-radius: 20px; padding: 18px; }
+      .bar-row { grid-template-columns: 56px 1fr 44px; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Static Git Activity Report</p>
+      <h1>Repo Pulse</h1>
+      <p class="lede">A local snapshot of commit rhythm, authorship, file churn, and recent work for <code>/Users/jamie/projects/daily-codex-projects/runs/20260409-101518</code>. This report is generated without external APIs and can be published directly as a static site.</p>
+      <div class="meta">
+        <span class="pill">1 commits</span>
+        <span class="pill">1 authors</span>
+        <span class="pill">12 files touched</span>
+        <span class="pill">Generated Apr 9, 2026, 10:20 AM</span>
+      </div>
+    </section>
+
+    <section class="grid section">
+      <article class="card"><div class="subtle">Lines added</div><div class="stat">835</div><p class="subtle">Total insertions across parsed history</p></article>
+      <article class="card"><div class="subtle">Lines deleted</div><div class="stat">0</div><p class="subtle">Total deletions across parsed history</p></article>
+      <article class="card"><div class="subtle">Average files / commit</div><div class="stat">12</div><p class="subtle">Rough change breadth per commit</p></article>
+      <article class="card"><div class="subtle">Longest streak</div><div class="stat">1 day</div><p class="subtle">Busiest day: 2026-04-09 (1 commits)</p></article>
+    </section>
+
+    <section class="grid section">
+      <article class="card">
+        <h2>Commits by Weekday</h2>
+        <div class="bars"><div class="bar-row"><span>Sun</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>Mon</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>Tue</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>Wed</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>Thu</span><div class="bar"><span style="width:100%"></span></div><strong>1</strong></div><div class="bar-row"><span>Fri</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>Sat</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div></div>
+      </article>
+      <article class="card">
+        <h2>Commits by Hour</h2>
+        <div class="bars"><div class="bar-row"><span>00:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>01:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>02:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>03:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>04:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>05:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>06:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>07:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>08:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>09:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>10:00</span><div class="bar"><span style="width:100%"></span></div><strong>1</strong></div><div class="bar-row"><span>11:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>12:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>13:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>14:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>15:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>16:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>17:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>18:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>19:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>20:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>21:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>22:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div><div class="bar-row"><span>23:00</span><div class="bar"><span style="width:0%"></span></div><strong>0</strong></div></div>
+      </article>
+    </section>
+
+    <section class="grid section">
+      <article class="card">
+        <h2>Daily Activity</h2>
+        <div class="heatmap"><span title="2026-04-09: 1 commit" style="height:132px"></span></div>
+        <p class="subtle">Last 1 active days in the parsed history.</p>
+      </article>
+      <article class="card">
+        <h2>Top Authors</h2>
+        <table>
+          <thead><tr><th>Author</th><th>Commits</th><th>+ / -</th></tr></thead>
+          <tbody><tr><td>Jamie</td><td>1</td><td>835 / 0</td></tr></tbody>
+        </table>
+      </article>
+    </section>
+
+    <section class="grid section">
+      <article class="card">
+        <h2>Most-Touched Files</h2>
+        <table>
+          <thead><tr><th>File</th><th>Touches</th><th>+ / -</th></tr></thead>
+          <tbody><tr><td><code>src/report.js</code></td><td>1</td><td>288 / 0</td></tr><tr><td><code>src/analyze.js</code></td><td>1</td><td>130 / 0</td></tr><tr><td><code>README.md</code></td><td>1</td><td>87 / 0</td></tr><tr><td><code>src/git.js</code></td><td>1</td><td>84 / 0</td></tr><tr><td><code>src/cli.js</code></td><td>1</td><td>65 / 0</td></tr><tr><td><code>test/git.test.js</code></td><td>1</td><td>56 / 0</td></tr><tr><td><code>docs/usage.md</code></td><td>1</td><td>39 / 0</td></tr><tr><td><code>test/fixtures/git-log.txt</code></td><td>1</td><td>25 / 0</td></tr><tr><td><code>docs/report-format.md</code></td><td>1</td><td>21 / 0</td></tr><tr><td><code>package.json</code></td><td>1</td><td>21 / 0</td></tr><tr><td><code>package-lock.json</code></td><td>1</td><td>16 / 0</td></tr><tr><td><code>.gitignore</code></td><td>1</td><td>3 / 0</td></tr></tbody>
+        </table>
+      </article>
+      <article class="card">
+        <h2>Recent Commits</h2>
+        <div class="commit-list">
+          <div class="commit">
+            <strong>Build Repo Pulse CLI and report generator</strong>
+            <div class="subtle"><code>9a7ac02</code> by Jamie on Apr 9, 2026, 10:20 AM</div>
+          </div></div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
