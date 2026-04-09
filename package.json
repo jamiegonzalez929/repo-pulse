@@ -1,0 +1,21 @@
+{
+  "name": "repo-pulse",
+  "version": "1.0.0",
+  "description": "Generate a static git activity report for any local repository.",
+  "type": "module",
+  "bin": {
+    "repo-pulse": "./src/cli.js"
+  },
+  "scripts": {
+    "test": "node --test",
+    "report": "node ./src/cli.js . --out ./docs",
+    "report:json": "node ./src/cli.js . --out ./docs --json"
+  },
+  "keywords": [
+    "git",
+    "analytics",
+    "visualization",
+    "github-pages"
+  ],
+  "license": "MIT"
+}
